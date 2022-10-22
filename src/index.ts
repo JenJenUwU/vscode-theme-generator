@@ -1,7 +1,10 @@
+import '@simonwep/pickr/dist/themes/nano.min.css';
+import Pickr  from '@simonwep/pickr';
+
 const pickr = Pickr.create({
     el: '.color-picker',
     theme: 'nano',
-    defaultRepresentation: 'HEX',
+    defaultRepresentation: 'HEXA',
 
     components: {
 
@@ -20,4 +23,6 @@ const pickr = Pickr.create({
     }
 });
 
-//console.log(pickr.getSelectedColor().toHEXA().toString());
+pickr.on('change', (color, instance) => {
+    console.log(color.toHEXA().toString());
+})
